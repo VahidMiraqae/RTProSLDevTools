@@ -1,0 +1,6 @@
+@RTProSLDevTools_HostAddress = http://localhost:5058
+
+GET {{RTProSLDevTools_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
