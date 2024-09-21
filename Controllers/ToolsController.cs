@@ -1,24 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
+using RTProSLDevTools.Controllers.Base;
+using RTProSLDevTools.Dtos;
 using RTProSLDevTools.Queries;
-using RTProSLDevTools.Results;
+using RTProSLDevTools.QueryHandlers.Response.Contracts;
 
 namespace RTProSLDevTools.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ToolsController(IQueryHandler queryHandler) :
-    ControllerBase
+public class ToolsController : MyApiController
 {
     [HttpGet]
-    public Task<IActionResult> GetSpParameters(GetSpParametersQuery<GetSpParametersDto> query)
-    {
-        file
-        return queryHandler.Handle(query);
-    }
-}
-
-
-public class MyController : Controller
-{
-
+    public async Task<IApiResponse> GetSpParameters(GetSpParametersQuery query)
+        => await HandleAsync<GetSpParametersQuery, IEnumerable<GetSpParametersDto>>(query);
 }

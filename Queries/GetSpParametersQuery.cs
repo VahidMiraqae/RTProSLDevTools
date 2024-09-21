@@ -1,6 +1,9 @@
-﻿namespace RTProSLDevTools.Queries;
+﻿using Microsoft.AspNetCore.Mvc;
 
-public class GetSpParametersQuery<T>
+namespace RTProSLDevTools.Queries;
+
+public class GetSpParametersQuery
 {
+    [FromQuery]
     public string SpName { get; set; }
 }
