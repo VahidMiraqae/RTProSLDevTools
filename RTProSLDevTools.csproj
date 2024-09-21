@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ApiModel\" />
     <Folder Include="wwwroot\scripts\" />
     <Folder Include="wwwroot\styles\" />
   </ItemGroup>
