@@ -2,7 +2,7 @@
 
 namespace RTProSLDevTools.Queries;
 
-public class GetSpParametersQuery
+public class SpParametersQuery
 {
     [FromQuery]
     public string SpName { get; set; }

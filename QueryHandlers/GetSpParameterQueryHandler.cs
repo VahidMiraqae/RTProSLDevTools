@@ -9,13 +9,13 @@ using RTProSLDevTools.QueryHandlers.Response.Contracts;
 namespace RTProSLDevTools.QueryHandlers;
 
 public class GetSpParameterQueryHandler(AppDbContext appDbContext)
-    : AsyncQueryHandler<GetSpParametersQuery, IEnumerable<GetSpParametersDto>>
+    : AsyncQueryHandler<SpParametersQuery, IEnumerable<SpParametersDto>>
 {
-    public async override Task<IApiResponse<IEnumerable<GetSpParametersDto>>> HandleAsync(GetSpParametersQuery query)
+    public async override Task<IApiResponse<IEnumerable<SpParametersDto>>> HandleAsync(SpParametersQuery query)
     {
         var spParameters = from e in appDbContext.Set<SpParameter>()
                            where AppDbContext.OBJECT_ID(query.SpName) == e.ObjectId
-                           select new GetSpParametersDto
+                           select new SpParametersDto
                            {
                                ObjectId = e.ObjectId,
                                Name = e.Name,

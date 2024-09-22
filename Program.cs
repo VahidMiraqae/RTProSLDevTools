@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using RTProSLDevTools;
 using RTProSLDevTools.Data;
 using RTProSLDevTools.QueryHandlers.Contracts;
 
@@ -6,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(config =>
+{
+    config.InputFormatters.Insert(0, new TextPlainFormatter());
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

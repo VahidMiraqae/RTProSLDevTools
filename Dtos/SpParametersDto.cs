@@ -1,6 +1,6 @@
 ﻿namespace RTProSLDevTools.Dtos
 {
-    public class GetSpParametersDto
+    public class SpParametersDto
     {
         public int ObjectId { get; set; }
         public string? Name { get; set; }
